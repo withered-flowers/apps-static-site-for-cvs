@@ -1,0 +1,52 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Link from "../../../components/Link.astro";
+
+interface Props {
+  gen: string;
+  listOfCV: CollectionEntry<"cv">[];
+}
+
+export const getStaticPaths = async () => {
+  const getCv = await getCollection("cv");
+
+  return getCv.map((entry) => ({
+    params: {
+      gen: entry.data.generation,
+    },
+    props: {
+      gen: entry.data.generation,
+      listOfCV: getCv.filter(
+        (cv) => cv.data.generation === entry.data.generation
+      ),
+    },
+  }));
+};
+
+export const prerender = true;
+
+const { gen, listOfCV } = Astro.props as Props;
+---
+
+<BaseLayout className="bg-gray-50 text-slate-600">
+  <Header title={`CV of ${gen}`} />
+  <main class="p-4">
+    <section>
+      <p class="text-xl">Please choose Graduate:</p>
+      <ul class="ml-2 flex list-disc flex-col gap-2 p-2">
+        {
+          listOfCV.map((cv) => (
+            <li>
+              <Link href={`/cv/grads/${cv.slug}`}>{cv.data.name}</Link>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+
+import Standard from "../../../layouts/cv/Standard.astro";
+
+enum CVTemplate {
+  STANDARD = "standard",
+}
+
+interface Props {
+  gen: string;
+  cv: CollectionEntry<"cv">;
+}
+
+export const getStaticPaths = async () => {
+  const getCv = await getCollection("cv");
+
+  return getCv.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: {
+      cv: entry,
+    },
+  }));
+};
+
+export const prerender = true;
+
+const { cv } = Astro.props;
+---
+
+{
+  cv.data.template === CVTemplate.STANDARD ? (
+    <Standard frontmatter={cv.data} />
+  ) : undefined
+}

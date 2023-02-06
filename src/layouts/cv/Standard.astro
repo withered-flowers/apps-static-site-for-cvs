@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../BaseLayout.astro";
+
+import CustomContact from "../../components/CustomContact.astro";
+
+interface Props {
+  frontmatter: CV;
+}
+
+const { frontmatter } = Astro.props as Props;
+---
+
+<BaseLayout
+  title={`CV | ${frontmatter.name}`}
+  className="bg-gray-50 text-slate-600"
+>
+  <section class="flex flex-col gap-4 p-4">
+    <!-- Navigation (Print) -->
+    <section class="flex flex-row justify-between gap-2 py-2">
+      <h1>About Graduates ({frontmatter.name})</h1>
+      <button>Print Me</button>
+    </section>
+
+    <!-- Identity -->
+    <section id="identity" class="flex flex-col items-center gap-2 text-center">
+      <img
+        src={frontmatter.avatarUrl}
+        class="w-32 rounded-full border-2 border-black shadow-md shadow-black print:grayscale"
+      />
+      <p class="text-xl font-bold print:text-base">{frontmatter.name}</p>
+      <p class="print:text-base">(He / Him)</p>
+      <p class="flex flex-row gap-2">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 print:h-4 print:w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            ></path><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg
+          >
+        </span>
+        <span>{frontmatter.location}</span>
+      </p>
+    </section>
+
+    <!-- About Me -->
+    {
+      frontmatter.aboutMe && (
+        <section id="about-me" class="text-left">
+          <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
+            About Me
+          </p>
+          <p>{frontmatter.aboutMe}</p>
+        </section>
+      )
+    }
+
+    <!-- Contact -->
+    <section id="about-me" class="text-left">
+      <p
+        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
+      >
+        Contact
+      </p>
+      <ul>
+        {
+          frontmatter.contacts?.map((contact) => (
+            <li>
+              <CustomContact contact={contact} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="work-experience" class="text-left">
+      <p
+        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
+      >
+        Work Experience
+      </p>
+    </section>
+
+    <section id="education" class="text-left">
+      <p
+        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
+      >
+        Education
+      </p>
+    </section>
+
+    <section id="skills" class="text-left">
+      <p
+        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
+      >
+        Skills
+      </p>
+    </section>
+  </section>
+  <slot />
+</BaseLayout>
