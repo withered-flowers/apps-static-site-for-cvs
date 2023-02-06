@@ -14,6 +14,7 @@ const cvSchema = {
           "discord",
           "email",
           "line",
+          "linkedin",
           "phone",
           "telegram",
           "whatsapp",
@@ -21,6 +22,28 @@ const cvSchema = {
         value: z.string(),
       })
     ),
+    workExperiences: z
+      .array(
+        z.object({
+          title: z.string(),
+          company: z.string(),
+          startDate: z.string(),
+          endDate: z.string(),
+          description: z.array(z.string()),
+        })
+      )
+      .optional(),
+    educations: z
+      .array(
+        z.object({
+          title: z.string(),
+          school: z.string(),
+          startYear: z.number(),
+          endYear: z.number(),
+          description: z.array(z.string()).optional(),
+        })
+      )
+      .optional(),
   }),
 };
 

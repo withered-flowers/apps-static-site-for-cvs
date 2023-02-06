@@ -1,0 +1,12 @@
+---
+interface Props {
+  svgImage: string;
+}
+
+const { svgImage } = Astro.props as Props;
+---
+
+<section class="flex flex-row items-center gap-2">
+  <img src={svgImage} />
+  <p><slot /></p>
+</section>

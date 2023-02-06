@@ -26,9 +26,9 @@ interface WorkExperience {
 interface Education {
   title: string;
   school: string;
-  startYear: string;
-  endYear: string;
-  description: string[];
+  startYear: number;
+  endYear: number;
+  description?: string[] | undefined;
 }
 
 interface Certification {
@@ -39,7 +39,7 @@ interface Certification {
   description: string[];
 }
 
-interface Skills {
+interface Skill {
   name: string;
   description: string[];
 }
@@ -49,11 +49,11 @@ interface CV {
   generation: string;
   avatarUrl: string;
   name: string;
-  aboutMe?: string;
+  aboutMe?: string | undefined;
   location: string;
   contacts: Contact[];
-  workExperience?: WorkExperience[];
-  education?: Education[];
-  certification?: Certification[];
-  skills?: Skills[];
+  workExperiences?: WorkExperience[] | undefined;
+  educations?: Education[] | undefined;
+  certifications?: Certification[] | undefined;
+  skills?: Skill[] | undefined;
 }

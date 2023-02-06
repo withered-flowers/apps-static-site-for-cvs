@@ -1,0 +1,72 @@
+---
+import discordSvg from "../assets/discord.svg";
+import emailSvg from "../assets/email.svg";
+import lineSvg from "../assets/line.svg";
+import linkedinSvg from "../assets/linkedin.svg";
+import phoneSvg from "../assets/phone.svg";
+import telegramSvg from "../assets/telegram.svg";
+import whatsappSvg from "../assets/whatsapp.svg";
+
+import ContactSlot from "./ContactSlot.astro";
+
+interface Props {
+  contact: Contact;
+}
+
+const { contact } = Astro.props as Props;
+---
+
+{
+  () => {
+    switch (contact.protocol) {
+      case "discord":
+        return (
+          <section>
+            <ContactSlot svgImage={discordSvg}>{contact.value}</ContactSlot>
+          </section>
+        );
+      case "email":
+        return (
+          <section>
+            <ContactSlot svgImage={emailSvg}>{contact.value}</ContactSlot>
+          </section>
+        );
+      case "line":
+        return (
+          <section>
+            <ContactSlot svgImage={lineSvg}>{contact.value}</ContactSlot>
+          </section>
+        );
+      case "linkedin":
+        return (
+          <section>
+            <ContactSlot svgImage={linkedinSvg}>{contact.value}</ContactSlot>
+          </section>
+        );
+      case "phone":
+        return (
+          <section>
+            <ContactSlot svgImage={phoneSvg}>{contact.value}</ContactSlot>
+          </section>
+        );
+      case "telegram":
+        return (
+          <section>
+            <ContactSlot svgImage={telegramSvg}>{contact.value}</ContactSlot>
+          </section>
+        );
+      case "whatsapp":
+        return (
+          <section>
+            <ContactSlot svgImage={whatsappSvg}>{contact.value}</ContactSlot>
+          </section>
+        );
+      default:
+        return (
+          <section>
+            {contact.protocol} - {contact.value}
+          </section>
+        );
+    }
+  }
+}
