@@ -50,6 +50,7 @@ interface CV {
   generation: string;
   avatarUrl: string;
   name: string;
+  pronouns: string;
   aboutMe?: string | undefined;
   location: string;
   contacts: Contact[];

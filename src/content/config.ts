@@ -6,6 +6,7 @@ const cvSchema = {
     generation: z.string(),
     avatarUrl: z.string(),
     name: z.string(),
+    pronouns: z.string(),
     location: z.string(),
     aboutMe: z.string().optional(),
     contacts: z.array(
@@ -50,9 +51,17 @@ const cvSchema = {
           title: z.string(),
           issuer: z.string(),
           startDate: z.string(),
-          endDate: z.string(),
+          expirationDate: z.string(),
           certificateUrl: z.string().optional(),
           description: z.array(z.string()).optional(),
+        })
+      )
+      .optional(),
+    skills: z
+      .array(
+        z.object({
+          name: z.string(),
+          description: z.array(z.string()),
         })
       )
       .optional(),

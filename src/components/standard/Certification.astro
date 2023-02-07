@@ -1,0 +1,28 @@
+---
+const { certification } = Astro.props as { certification: Certification };
+---
+
+<section>
+  <div class="flex flex-row items-start justify-between">
+    <div>
+      <p class="font-semibold">{certification.title}</p>
+      <p class="text-base font-semibold">{certification.issuer}</p>
+    </div>
+    <p>
+      <span class="font-semibold"
+        >{certification.startDate} - {certification.expirationDate}</span
+      >
+    </p>
+  </div>
+  <div class="mt-2 text-base">
+    {
+      certification.description && (
+        <ul class="ml-4 list-disc">
+          {certification.description.map((desc) => (
+            <li>{desc}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</section>

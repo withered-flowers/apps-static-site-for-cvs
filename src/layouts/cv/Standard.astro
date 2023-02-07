@@ -1,8 +1,11 @@
 ---
 import BaseLayout from "../BaseLayout.astro";
-import Contact from "../../components/Contact.astro";
-import WorkExperience from "../../components/WorkExperience.astro";
-import Education from "../../components/Education.astro";
+
+import Contact from "../../components/standard/Contact.astro";
+import WorkExperience from "../../components/standard/WorkExperience.astro";
+import Education from "../../components/standard/Education.astro";
+import Certification from "../../components/standard/Certification.astro";
+import Skill from "../../components/standard/Skill.astro";
 
 interface Props {
   frontmatter: CV;
@@ -29,7 +32,7 @@ const { frontmatter } = Astro.props as Props;
         class="w-32 rounded-full border-2 border-black shadow-md shadow-black print:grayscale"
       />
       <p class="text-xl font-bold print:text-base">{frontmatter.name}</p>
-      <p class="print:text-base">(He / Him)</p>
+      <p class="print:text-base">{frontmatter.pronouns}</p>
       <p class="flex flex-row gap-2">
         <span>
           <svg
@@ -63,7 +66,7 @@ const { frontmatter } = Astro.props as Props;
         Contact
       </p>
       <ul
-        class="flex flex-col gap-2 text-base sm:grid sm:grid-cols-2 md:px-8 md:text-lg lg:px-16"
+        class="flex flex-col gap-2 text-base print:grid print:grid-cols-2 sm:grid sm:grid-cols-2 md:px-8 md:text-lg lg:px-16"
       >
         {
           frontmatter.contacts?.map((contact) => (
@@ -78,7 +81,7 @@ const { frontmatter } = Astro.props as Props;
     <!-- About Me -->
     {
       frontmatter.aboutMe && (
-        <section id="about-me" class="text-left">
+        <section id="about-me" class="text-left text-base">
           <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
             About Me
           </p>
@@ -128,6 +131,13 @@ const { frontmatter } = Astro.props as Props;
       >
         Certification
       </p>
+      <div class="flex flex-col gap-4">
+        {
+          frontmatter.certifications?.map((certification) => (
+            <Certification certification={certification} />
+          ))
+        }
+      </div>
     </section>
 
     <!-- Skills -->
@@ -137,6 +147,9 @@ const { frontmatter } = Astro.props as Props;
       >
         Skills
       </p>
+      <div class="grid grid-cols-1 print:grid print:grid-cols-2 md:grid-cols-2">
+        {frontmatter.skills?.map((skill) => <Skill skill={skill} />)}
+      </div>
     </section>
   </section>
   <slot />

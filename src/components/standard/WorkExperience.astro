@@ -14,7 +14,7 @@ const { workExperience } = Astro.props as { workExperience: WorkExperience };
       >
     </p>
   </div>
-  <div class="mt-2">
+  <div class="mt-2 text-base">
     <ul class="ml-4 list-disc">
       {workExperience.description.map((desc) => <li>{desc}</li>)}
     </ul>

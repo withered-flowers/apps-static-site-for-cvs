@@ -3,13 +3,16 @@
 template: standard
 
 # string - Required
-generation: RMT 31 (Eustoma Fox)
+pronouns: (He / Him)
+
+# string - Required
+generation: TMP-01 (Template)
 
 # string - Required
 avatarUrl: https://avatars.githubusercontent.com/u/1587199?v=4
 
 # string - Required
-name: Flowers Withered
+name: Lorem Ipsum
 
 # string - Required
 location: Indonesia
@@ -100,8 +103,8 @@ educations:
 certifications:
   - title: Aenean sagittis sed eros ut dignissim
     issuer: Vestibulum
-    startDate: 12 Mar 2022
-    endDate: 1 Jan 2023
+    startDate: Mar 2022
+    expirationDate: Jan 2023
     certificateUrl: https://www.google.com
     description:
       - Ultricies dictum ex ut commodo
@@ -109,6 +112,33 @@ certifications:
       - Suspendisse nec purus quis turpis lobortis ultricies a sed odio. Fusce quis odio libero. Suspendisse eget elit vitae velit pretium commodo.
   - title: Aliquam consequat vitae
     issuer: Nisl egestas
-    startDate: 20 Nov 2022
-    endDate: 1 Feb 2023
+    startDate: Nov 2022
+    expirationDate: Feb 2023
+
+# Array of Object - Optional
+# - name: string
+# - description: Array of String
+skills:
+  - name: FrontEnd
+    description:
+      - Astro (Advanced)
+      - Vue (Advanced)
+      - Svelte (Intermediate)
+  - name: BackEnd
+    description:
+      - Express & Sequelize (Intermediate)
+      - PostgreSQL (Intermediate)
+      - Go (Gin) (Intermediate)
+  - name: Cloud Computing
+    description:
+      - Firebase (Intermediate)
+      - Amazon Web Services (Basic)
+      - Docker & Kubernetes (Basic)
+      - Google Cloud Platform (Intermediate)
+  - name: Techniques
+    description:
+      - Googling (Advanced)
+      - StackOverflow-ing (Advanced)
+      - Git (Advanced)
+      - Reading Docs (Advanced)
 ---
