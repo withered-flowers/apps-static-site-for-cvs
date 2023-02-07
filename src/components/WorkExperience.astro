@@ -1,0 +1,22 @@
+---
+const { workExperience } = Astro.props as { workExperience: WorkExperience };
+---
+
+<section>
+  <div class="flex flex-row items-start justify-between">
+    <div>
+      <p class="font-semibold">{workExperience.title}</p>
+      <p class="text-base font-semibold">{workExperience.company}</p>
+    </div>
+    <p>
+      <span class="font-semibold"
+        >{workExperience.startDate} - {workExperience.endDate}</span
+      >
+    </p>
+  </div>
+  <div class="mt-2">
+    <ul class="ml-4 list-disc">
+      {workExperience.description.map((desc) => <li>{desc}</li>)}
+    </ul>
+  </div>
+</section>

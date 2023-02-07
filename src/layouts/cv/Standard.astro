@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../BaseLayout.astro";
 import Contact from "../../components/Contact.astro";
+import WorkExperience from "../../components/WorkExperience.astro";
+import Education from "../../components/Education.astro";
 
 interface Props {
   frontmatter: CV;
@@ -53,6 +55,26 @@ const { frontmatter } = Astro.props as Props;
       </p>
     </section>
 
+    <!-- Contact -->
+    <section id="about-me" class="text-left">
+      <p
+        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
+      >
+        Contact
+      </p>
+      <ul
+        class="flex flex-col gap-2 text-base sm:grid sm:grid-cols-2 md:px-8 md:text-lg lg:px-16"
+      >
+        {
+          frontmatter.contacts?.map((contact) => (
+            <li>
+              <Contact contact={contact} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
     <!-- About Me -->
     {
       frontmatter.aboutMe && (
@@ -65,24 +87,6 @@ const { frontmatter } = Astro.props as Props;
       )
     }
 
-    <!-- Contact -->
-    <section id="about-me" class="text-left">
-      <p
-        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
-      >
-        Contact
-      </p>
-      <ul class="flex flex-col gap-2">
-        {
-          frontmatter.contacts?.map((contact) => (
-            <li>
-              <Contact contact={contact} />
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-
     <!-- Work Experience -->
     {
       frontmatter.workExperiences && (
@@ -90,23 +94,43 @@ const { frontmatter } = Astro.props as Props;
           <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
             Work Experience
           </p>
-          <ul class="flex flex-col gap-2">
+
+          <div class="flex flex-col gap-4">
             {frontmatter.workExperiences?.map((workExperience) => (
-              <li>{workExperience.title}</li>
+              <WorkExperience workExperience={workExperience} />
             ))}
-          </ul>
+          </div>
         </section>
       )
     }
 
+    <!-- Educations -->
     <section id="education" class="text-left">
       <p
         class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
       >
         Education
       </p>
+
+      <div class="flex flex-col gap-4">
+        {
+          frontmatter.educations?.map((education) => (
+            <Education education={education} />
+          ))
+        }
+      </div>
     </section>
 
+    <!-- Certification -->
+    <section id="certification" class="text-left">
+      <p
+        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
+      >
+        Certification
+      </p>
+    </section>
+
+    <!-- Skills -->
     <section id="skills" class="text-left">
       <p
         class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"

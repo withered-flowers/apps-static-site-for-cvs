@@ -33,10 +33,11 @@ interface Education {
 
 interface Certification {
   title: string;
+  issuer: string;
   startDate: string;
   expirationDate: string;
-  url: string;
-  description: string[];
+  certificateUrl: string | undefined;
+  description: string[] | undefined;
 }
 
 interface Skill {

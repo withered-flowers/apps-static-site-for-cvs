@@ -75,10 +75,40 @@ workExperiences:
 # - school: string
 # - startYear: Year in string e.g. 2022
 # - endYear: Year in string e.g. 2023 or Present
-# - description: string (Optional)
+# - description: Array of String (Optional)
 educations:
   - title: Quis autem vel eum iure
     school: Reprehenderit qui in ea
     startYear: 2008
     endYear: 2012
+  - title: Phasellus et accumsan nunc
+    school: Morbi ultricies ligula
+    startYear: 2012
+    endYear: 2016
+    description:
+      - Ut nulla semper, gravida ornare est pretium.
+      - Aliquam orci sapien, efficitur id lacinia id, feugiat dapibus augue. Curabitur lacinia augue ante, a tincidunt leo fringilla quis. Pellentesque a sagittis nunc.
+      - Aenean ac dui ut leo tristique vehicula ut ac libero. Aenean sagittis sed eros ut dignissim. Vestibulum ultricies dictum ex ut commodo.
+
+# Array of Object - Optional
+# - title: string
+# - issuer: string
+# - startDate: string
+# - endDate: string
+# - certificateUrl: string (Optional)
+# - description: Array of String (Optional)
+certifications:
+  - title: Aenean sagittis sed eros ut dignissim
+    issuer: Vestibulum
+    startDate: 12 Mar 2022
+    endDate: 1 Jan 2023
+    certificateUrl: https://www.google.com
+    description:
+      - Ultricies dictum ex ut commodo
+      - Nunc eleifend dictum nibh, nec semper magna faucibus non. Praesent mattis metus eget nunc consequat, nec efficitur lorem tincidunt.
+      - Suspendisse nec purus quis turpis lobortis ultricies a sed odio. Fusce quis odio libero. Suspendisse eget elit vitae velit pretium commodo.
+  - title: Aliquam consequat vitae
+    issuer: Nisl egestas
+    startDate: 20 Nov 2022
+    endDate: 1 Feb 2023
 ---

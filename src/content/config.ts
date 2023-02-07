@@ -44,6 +44,18 @@ const cvSchema = {
         })
       )
       .optional(),
+    certifications: z
+      .array(
+        z.object({
+          title: z.string(),
+          issuer: z.string(),
+          startDate: z.string(),
+          endDate: z.string(),
+          certificateUrl: z.string().optional(),
+          description: z.array(z.string()).optional(),
+        })
+      )
+      .optional(),
   }),
 };
 

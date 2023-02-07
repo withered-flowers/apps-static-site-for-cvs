@@ -1,0 +1,28 @@
+---
+const { education } = Astro.props as { education: Education };
+---
+
+<section>
+  <div class="flex flex-row items-start justify-between">
+    <div>
+      <p class="font-semibold">{education.title}</p>
+      <p class="text-base font-semibold">{education.school}</p>
+    </div>
+    <p>
+      <span class="font-semibold"
+        >{education.startYear} - {education.endYear}</span
+      >
+    </p>
+  </div>
+  <div class="mt-2">
+    {
+      education.description && (
+        <ul class="ml-4 list-disc">
+          {education.description.map((desc) => (
+            <li>{desc}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</section>
