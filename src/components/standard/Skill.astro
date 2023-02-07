@@ -7,7 +7,7 @@ const { skill } = Astro.props as { skill: Skill };
     <div class="flex w-full flex-row justify-between">
       <span class="text-lg font-bold print:text-sm">{skill.name}</span>
     </div>
-    <ul class="ml-4 list-disc">
+    <ul class="ml-4 list-disc text-base">
       {skill.description.map((desc) => <li>{desc}</li>)}
     </ul>
   </div>

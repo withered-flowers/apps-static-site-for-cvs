@@ -20,9 +20,14 @@ const { frontmatter } = Astro.props as Props;
 >
   <section class="flex flex-col gap-4 p-4">
     <!-- Navigation (Print) -->
-    <section class="flex flex-row justify-between gap-2 py-2">
+    <section
+      class="flex flex-row items-center justify-between gap-2 py-2 print:hidden"
+    >
       <h1>About Graduates ({frontmatter.name})</h1>
-      <button>Print Me</button>
+      <button
+        class="flex flex-row gap-2 rounded border border-red-300 py-2 px-4 text-red-400 transition-colors duration-300 hover:bg-red-400 hover:text-white"
+        onclick="window.print();">Print Me</button
+      >
     </section>
 
     <!-- Identity -->
@@ -32,7 +37,7 @@ const { frontmatter } = Astro.props as Props;
         class="w-32 rounded-full border-2 border-black shadow-md shadow-black print:grayscale"
       />
       <p class="text-xl font-bold print:text-base">{frontmatter.name}</p>
-      <p class="print:text-base">{frontmatter.pronouns}</p>
+      <p class="text-base">{frontmatter.pronouns}</p>
       <p class="flex flex-row gap-2">
         <span>
           <svg
@@ -54,7 +59,7 @@ const { frontmatter } = Astro.props as Props;
               d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
         </span>
-        <span>{frontmatter.location}</span>
+        <span class="text-base">{frontmatter.location}</span>
       </p>
     </section>
 
