@@ -26,8 +26,8 @@ interface WorkExperience {
 interface Education {
   title: string;
   school: string;
-  startYear: number;
-  endYear: number;
+  startYear: string;
+  endYear: string;
   description?: string[] | undefined;
 }
 
