@@ -2,11 +2,12 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import Link from "../../components/Link.astro";
 ---
 
 <BaseLayout className="bg-gray-50 text-slate-600">
   <!-- Disclaimer -->
-  <dialog
+  <!-- <dialog
     open
     class="hidden min-h-screen min-w-full p-2 text-center text-slate-600 shadow-md open:flex open:items-center open:justify-center open:bg-red-200"
   >
@@ -25,7 +26,7 @@ import Footer from "../../components/Footer.astro";
         type="submit">Agree</button
       >
     </form>
-  </dialog>
+  </dialog> -->
 
   <section class="mx-auto md:w-3/4 lg:p-8 xl:w-3/5">
     <Header title="How to Add Your CV here" />
@@ -40,17 +41,15 @@ import Footer from "../../components/Footer.astro";
     <p class="text-lg">Step-by-step:</p>
     <ol class="ml-6 list-decimal text-lg">
       <li>
-        Clone the repo by using via:
-        <ul class="ml-4 list-disc">
-          <li>
-            <code class="font-semibold"
-              >git clone -b new-cv
-              https://github.com/withered-flowers/apps-static-site-for-cvs.git</code
-            >
-          </li>
-        </ul>
+        Fork the repository by clicking the link: <Link
+          href="https://github.com/withered-flowers/apps-static-site-for-cvs/fork"
+        >
+          Astro CV
+        </Link>
       </li>
-      <li>Change directory to the cloned folder</li>
+      <li>
+        Clone the repository and change directory to the cloned repository
+      </li>
       <li>
         Create a new branch in your local computer via <code
           class="font-semibold">git checkout -b [new-branch]</code
@@ -82,8 +81,10 @@ import Footer from "../../components/Footer.astro";
         > and see that your CV is already made.
       </li>
       <li>
-        After the test is successful, <b>Pull Request</b> to the <b>main</b> branch
-        and wait for the result !
+        After the test is successful, <b>Commit</b> to your branch and <b
+          >Pull Request</b
+        > to the <b>main</b> branch in <b>original repository</b> and wait for the
+        result !
       </li>
     </ol>
 
