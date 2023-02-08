@@ -44,8 +44,8 @@ const cvSchema = {
         z.object({
           title: z.string(),
           school: z.string(),
-          startYear: z.number(),
-          endYear: z.number(),
+          startYear: z.string(),
+          endYear: z.string(),
           description: z.array(z.string()).optional(),
         })
       )
