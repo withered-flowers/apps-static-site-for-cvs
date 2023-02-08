@@ -36,8 +36,8 @@ interface Certification {
   issuer: string;
   startDate: string;
   expirationDate: string;
-  certificateUrl: string | undefined;
-  description: string[] | undefined;
+  certificateUrl?: string | undefined;
+  description?: string[] | undefined;
 }
 
 interface Skill {
@@ -47,6 +47,7 @@ interface Skill {
 
 interface CV {
   template: string;
+  // WARNING: generation is enum of string in zod (config.ts)
   generation: string;
   avatarUrl: string;
   name: string;

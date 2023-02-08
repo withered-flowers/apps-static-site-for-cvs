@@ -3,7 +3,11 @@ import { z, defineCollection } from "astro:content";
 const cvSchema = {
   schema: z.object({
     template: z.string(),
-    generation: z.string(),
+    generation: z.enum([
+      "HCK-53 (Arsenic Fox)",
+      "RMT-31 (Eustoma Fox)",
+      "TMP-01 (Template)",
+    ]),
     avatarUrl: z.string(),
     name: z.string(),
     pronouns: z.string(),
