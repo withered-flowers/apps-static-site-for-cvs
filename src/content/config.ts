@@ -6,6 +6,7 @@ const cvSchema = {
     generation: z.enum([
       "HCK-52 (Zigzag Fox)",
       "HCK-53 (Arsenic Fox)",
+      "RMT-30 (Dahlia Fox)",
       "RMT-31 (Eustoma Fox)",
       "TMP-01 (Template)",
     ]),
