@@ -4,6 +4,7 @@ const cvSchema = {
   schema: z.object({
     template: z.string(),
     generation: z.enum([
+      "HCK-52 (Zigzag Fox)",
       "HCK-53 (Arsenic Fox)",
       "RMT-31 (Eustoma Fox)",
       "TMP-01 (Template)",
