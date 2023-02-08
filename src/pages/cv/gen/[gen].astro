@@ -32,7 +32,9 @@ export const prerender = true;
 const { gen, listOfCV } = Astro.props as Props;
 ---
 
-<BaseLayout className="bg-gray-50 text-slate-600">
+<BaseLayout
+  className="bg-gray-50 text-slate-600 lg:p-8 md:w-3/4 xl:w-3/5 mx-auto"
+>
   <Header title={`CV of ${gen}`} />
   <main class="p-4">
     <section>

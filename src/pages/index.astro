@@ -20,7 +20,9 @@ const uniqueGenerations = await getCollection("cv").then(
 export const prerender = true;
 ---
 
-<BaseLayout className="bg-gray-50 text-slate-600">
+<BaseLayout
+  className="bg-gray-50 text-slate-600 lg:p-8 md:w-3/4 xl:w-3/5 mx-auto"
+>
   <Header />
   <main class="p-4">
     <section>
