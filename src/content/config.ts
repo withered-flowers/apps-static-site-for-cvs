@@ -39,17 +39,15 @@ const cvSchema = {
         })
       )
       .optional(),
-    educations: z
-      .array(
-        z.object({
-          title: z.string(),
-          school: z.string(),
-          startYear: z.string(),
-          endYear: z.string(),
-          description: z.array(z.string()).optional(),
-        })
-      )
-      .optional(),
+    educations: z.array(
+      z.object({
+        title: z.string(),
+        school: z.string(),
+        startYear: z.string(),
+        endYear: z.string(),
+        description: z.array(z.string()).optional(),
+      })
+    ),
     certifications: z
       .array(
         z.object({
@@ -62,14 +60,12 @@ const cvSchema = {
         })
       )
       .optional(),
-    skills: z
-      .array(
-        z.object({
-          name: z.string(),
-          description: z.array(z.string()),
-        })
-      )
-      .optional(),
+    skills: z.array(
+      z.object({
+        name: z.string(),
+        description: z.array(z.string()),
+      })
+    ),
   }),
 };
 

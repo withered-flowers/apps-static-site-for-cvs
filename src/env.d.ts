@@ -56,7 +56,7 @@ interface CV {
   location: string;
   contacts: Contact[];
   workExperiences?: WorkExperience[] | undefined;
-  educations?: Education[] | undefined;
+  educations?: Education[];
   certifications?: Certification[] | undefined;
-  skills?: Skill[] | undefined;
+  skills?: Skill[];
 }
