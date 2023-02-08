@@ -1,12 +1,14 @@
 ---
 interface Props {
   svgImage: string;
+  alt: string;
 }
 
-const { svgImage } = Astro.props as Props;
+const { svgImage, alt } = Astro.props as Props;
 ---
 
 <section class="flex flex-row items-center gap-2">
-  <img src={svgImage} />
+  <img class="print:hidden" src={svgImage} alt={alt} />
+  <p class="hidden print:block print:capitalize">{alt}:</p>
   <p><slot /></p>
 </section>

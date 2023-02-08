@@ -14,59 +14,42 @@ interface Props {
 }
 
 const { contact } = Astro.props as Props;
+
+let svgImage = "";
+
+switch (contact.protocol) {
+  case "discord":
+    svgImage = discordSvg;
+    break;
+  case "email":
+    svgImage = emailSvg;
+    break;
+  case "line":
+    svgImage = lineSvg;
+    break;
+  case "linkedin":
+    svgImage = linkedinSvg;
+    break;
+  case "phone":
+    svgImage = phoneSvg;
+    break;
+  case "telegram":
+    svgImage = telegramSvg;
+    break;
+  case "whatsapp":
+    svgImage = whatsappSvg;
+    break;
+}
 ---
 
 {
-  () => {
-    switch (contact.protocol) {
-      case "discord":
-        return (
-          <section>
-            <ContactSlot svgImage={discordSvg}>{contact.value}</ContactSlot>
-          </section>
-        );
-      case "email":
-        return (
-          <section>
-            <ContactSlot svgImage={emailSvg}>{contact.value}</ContactSlot>
-          </section>
-        );
-      case "line":
-        return (
-          <section>
-            <ContactSlot svgImage={lineSvg}>{contact.value}</ContactSlot>
-          </section>
-        );
-      case "linkedin":
-        return (
-          <section>
-            <ContactSlot svgImage={linkedinSvg}>{contact.value}</ContactSlot>
-          </section>
-        );
-      case "phone":
-        return (
-          <section>
-            <ContactSlot svgImage={phoneSvg}>{contact.value}</ContactSlot>
-          </section>
-        );
-      case "telegram":
-        return (
-          <section>
-            <ContactSlot svgImage={telegramSvg}>{contact.value}</ContactSlot>
-          </section>
-        );
-      case "whatsapp":
-        return (
-          <section>
-            <ContactSlot svgImage={whatsappSvg}>{contact.value}</ContactSlot>
-          </section>
-        );
-      default:
-        return (
-          <section>
-            {contact.protocol} - {contact.value}
-          </section>
-        );
-    }
-  }
+  (
+    <section>
+      {svgImage !== "" && (
+        <ContactSlot svgImage={svgImage} alt={contact.protocol}>
+          {contact.value}
+        </ContactSlot>
+      )}
+    </section>
+  )
 }

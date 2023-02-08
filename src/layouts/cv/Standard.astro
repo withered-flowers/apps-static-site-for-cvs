@@ -21,6 +21,7 @@ const { frontmatter } = Astro.props as Props;
   <section class="flex flex-col gap-4 p-4">
     <!-- Navigation (Print) -->
     <section
+      id="navigations"
       class="flex flex-row items-center justify-between gap-2 py-2 print:hidden"
     >
       <h1>About Graduates ({frontmatter.name})</h1>
@@ -31,14 +32,20 @@ const { frontmatter } = Astro.props as Props;
     </section>
 
     <!-- Identity -->
-    <section id="identity" class="flex flex-col items-center gap-2 text-center">
+    <section
+      id="identity"
+      class="flex flex-col items-center gap-2 text-center print:gap-1"
+    >
       <img
         src={frontmatter.avatarUrl}
+        alt={frontmatter.name}
         class="w-32 rounded-full border-2 border-black shadow-md shadow-black print:grayscale"
       />
-      <p class="text-xl font-bold print:text-base">{frontmatter.name}</p>
+      <p class="text-xl font-bold print:mt-2">
+        {frontmatter.name}
+      </p>
       <p class="text-base">{frontmatter.pronouns}</p>
-      <p class="flex flex-row gap-2">
+      <p class="flex flex-row items-center gap-1">
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +71,7 @@ const { frontmatter } = Astro.props as Props;
     </section>
 
     <!-- Contact -->
-    <section id="about-me" class="text-left">
+    <section id="contacts" class="text-left">
       <p
         class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
       >
@@ -98,7 +105,7 @@ const { frontmatter } = Astro.props as Props;
     <!-- Work Experience -->
     {
       frontmatter.workExperiences && (
-        <section id="work-experience" class="text-left">
+        <section id="work-experiences" class="text-left">
           <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
             Work Experience
           </p>
@@ -113,7 +120,7 @@ const { frontmatter } = Astro.props as Props;
     }
 
     <!-- Educations -->
-    <section id="education" class="text-left">
+    <section id="educations" class="text-left">
       <p
         class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
       >
@@ -130,7 +137,7 @@ const { frontmatter } = Astro.props as Props;
     </section>
 
     <!-- Certification -->
-    <section id="certification" class="text-left">
+    <section id="certifications" class="text-left">
       <p
         class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
       >
@@ -152,7 +159,7 @@ const { frontmatter } = Astro.props as Props;
       >
         Skills
       </p>
-      <div class="grid grid-cols-1 print:grid print:grid-cols-2 md:grid-cols-2">
+      <div class="grid grid-cols-1 print:grid print:grid-cols-2 sm:grid-cols-2">
         {frontmatter.skills?.map((skill) => <Skill skill={skill} />)}
       </div>
     </section>
