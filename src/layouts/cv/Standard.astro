@@ -137,20 +137,20 @@ const { frontmatter } = Astro.props as Props;
     </section>
 
     <!-- Certification -->
-    <section id="certifications" class="text-left">
-      <p
-        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
-      >
-        Certification
-      </p>
-      <div class="flex flex-col gap-4">
-        {
-          frontmatter.certifications?.map((certification) => (
-            <Certification certification={certification} />
-          ))
-        }
-      </div>
-    </section>
+    {
+      frontmatter.certifications && (
+        <section id="certifications" class="text-left">
+          <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
+            Certification
+          </p>
+          <div class="flex flex-col gap-4">
+            {frontmatter.certifications?.map((certification) => (
+              <Certification certification={certification} />
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     <!-- Skills -->
     <section id="skills" class="text-left">
