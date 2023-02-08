@@ -20,11 +20,15 @@ const cvSchema = {
         protocol: z.enum([
           "discord",
           "email",
+          "instagram",
           "line",
           "linkedin",
           "phone",
           "telegram",
+          "tiktok",
+          "twitter",
           "whatsapp",
+          "youtube",
         ]),
         value: z.string(),
       })

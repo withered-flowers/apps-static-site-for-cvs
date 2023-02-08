@@ -1,11 +1,15 @@
 ---
 import discordSvg from "../../assets/discord.svg";
 import emailSvg from "../../assets/email.svg";
+import instagramSvg from "../../assets/instagram.svg";
 import lineSvg from "../../assets/line.svg";
 import linkedinSvg from "../../assets/linkedin.svg";
 import phoneSvg from "../../assets/phone.svg";
 import telegramSvg from "../../assets/telegram.svg";
+import tiktokSvg from "../../assets/tiktok.svg";
+import twitterSvg from "../../assets/twitter.svg";
 import whatsappSvg from "../../assets/whatsapp.svg";
+import youtubeSvg from "../../assets/youtube.svg";
 
 import ContactSlot from "./ContactSlot.astro";
 
@@ -24,6 +28,9 @@ switch (contact.protocol) {
   case "email":
     svgImage = emailSvg;
     break;
+  case "instagram":
+    svgImage = instagramSvg;
+    break;
   case "line":
     svgImage = lineSvg;
     break;
@@ -36,8 +43,17 @@ switch (contact.protocol) {
   case "telegram":
     svgImage = telegramSvg;
     break;
+  case "tiktok":
+    svgImage = tiktokSvg;
+    break;
+  case "twitter":
+    svgImage = twitterSvg;
+    break;
   case "whatsapp":
     svgImage = whatsappSvg;
+    break;
+  case "youtube":
+    svgImage = youtubeSvg;
     break;
 }
 ---
