@@ -4,11 +4,15 @@
 type ContactProtocol =
   | "discord"
   | "email"
+  | "instagram"
   | "line"
+  | "linkedin"
   | "phone"
   | "telegram"
+  | "tiktok"
+  | "twitter"
   | "whatsapp"
-  | "linkedin";
+  | "youtube";
 
 interface Contact {
   protocol: ContactProtocol;
