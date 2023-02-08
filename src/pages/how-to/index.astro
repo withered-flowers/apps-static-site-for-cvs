@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 ---
 
 <BaseLayout className="bg-gray-50 text-slate-600">
+  <!-- Disclaimer -->
   <dialog
     open
     class="hidden min-h-screen min-w-full p-2 text-center text-slate-600 shadow-md open:flex open:items-center open:justify-center open:bg-red-200"
@@ -25,55 +26,67 @@ import Footer from "../../components/Footer.astro";
       >
     </form>
   </dialog>
+
+  <section class="mx-auto md:w-3/4 lg:p-8 xl:w-3/5">
+    <Header title="How to Add Your CV here" />
+
+    <section class="text-center">
+      <a class="text-blue-500 underline hover:text-blue-700" href="/"
+        >Back to Home</a
+      >
+    </section>
+
+    <!-- How To -->
+    <p class="text-lg">Step-by-step:</p>
+    <ol class="ml-6 list-decimal text-lg">
+      <li>
+        Clone the repo by using via:
+        <ul class="ml-4 list-disc">
+          <li>
+            <code class="font-semibold"
+              >git clone -b new-cv
+              https://github.com/withered-flowers/apps-static-site-for-cvs.git</code
+            >
+          </li>
+        </ul>
+      </li>
+      <li>Change directory to the cloned folder</li>
+      <li>
+        Create a new branch in your local computer via <code
+          class="font-semibold">git checkout -b [new-branch]</code
+        >
+      </li>
+      <li>
+        Install the required packages via <code class="font-semibold"
+          >npm install</code
+        >
+      </li>
+      <li>Open the code in your favorite editor</li>
+      <li>Open the <code class="font-semibold">/src/content/cv</code></li>
+      <li>
+        Create a new <b>MDX File</b> inside the folder and name it with the given
+        format:
+        <ul class="ml-4 list-disc">
+          <li>Format: <b>[class-code]-[name].mdx</b></li>
+          <li>e.g.: <b>hck-53-lorem-ipsum.mdx</b></li>
+          <li>
+            For more information about the content see the given template: <b
+              >tmp-01-lorem-ipsum.mdx</b
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        Test the apps by running it via <code class="font-semibold"
+          >npm run dev</code
+        > and see that your CV is already made.
+      </li>
+      <li>
+        After the test is successful, <b>Pull Request</b> to the <b>main</b> branch
+        and wait for the result !
+      </li>
+    </ol>
+
+    <Footer />
+  </section>
 </BaseLayout>
-
-<section class="mx-auto md:w-3/4 lg:p-8 xl:w-3/5">
-  <Header title="How to Add Your CV here" />
-  <!-- Disclaimer -->
-
-  <!-- How To -->
-  <ol class="ml-4 list-decimal text-lg">
-    <li>
-      Clone the repo by using this command:
-      <code class="font-semibold"
-        >git clone -b new-cv
-        https://github.com/withered-flowers/apps-static-site-for-cvs.git</code
-      >
-    </li>
-    <li>
-      Create a new branch in your local computer via <code class="font-semibold"
-        >git checkout -b [new-branch]</code
-      >
-    </li>
-    <li>Change directory to the cloned folder</li>
-    <li>
-      Install the required packages via <code class="font-semibold"
-        >npm install</code
-      >
-    </li>
-    <li>Open the code in your favorite editor</li>
-    <li>Open the <code class="font-semibold">/src/content/cv</code></li>
-    <li>
-      Create a new <b>MDX File</b> inside the folder and name it with the given format:
-      <ul class="ml-4 list-disc">
-        <li>Format: <b>[class-code]-[name].mdx</b></li>
-        <li>e.g.: <b>hck-53-lorem-ipsum.mdx</b></li>
-        <li>
-          For more information about the content see the given template: <b
-            >tmp-01-lorem-ipsum.mdx</b
-          >
-        </li>
-      </ul>
-    </li>
-    <li>
-      Test the apps by running it via <code class="font-semibold"
-        >npm run dev</code
-      > and see that your CV is already made.
-    </li>
-    <li>
-      After the test is successful, <b>Pull Request</b> to the <b>main</b> branch
-      and wait for the result !
-    </li>
-  </ol>
-  <Footer />
-</section>
