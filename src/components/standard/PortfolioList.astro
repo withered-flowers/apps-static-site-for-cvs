@@ -1,0 +1,30 @@
+---
+import Portfolio from "./Portfolio.astro";
+
+const { portfolios } = Astro.props as { portfolios: Portfolio[] };
+---
+
+<!-- Small & Medium sized display = Carousel -->
+<section class="relative overflow-auto lg:hidden">
+  <div class="snap relative flex w-full snap-x gap-6 overflow-x-auto py-4">
+    <!-- Starting Point -->
+    <div class="shrink-0 snap-center">
+      <div class="w-4 shrink-0 sm:w-32 md:w-24"></div>
+    </div>
+
+    <!-- Contents (Portfolio) -->
+    {portfolios.map((portfolio) => <Portfolio portfolio={portfolio} />)}
+
+    <!-- Final Point -->
+    <div class="shrink-0 snap-center">
+      <div class="w-4 shrink-0 sm:w-32 md:w-24"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Large sized display = Grid -->
+<section class="hidden grid-cols-2 gap-4 lg:grid">
+  {portfolios.map((portfolio) => <Portfolio portfolio={portfolio} />)}
+</section>
+
+<section></section>

@@ -65,6 +65,20 @@ const cvSchema = {
         })
       )
       .optional(),
+    portfolios: z
+      .array(
+        z.object({
+          name: z.string(),
+          tag: z.enum(["content", "web", "mobile"]).optional(),
+          // Limitation: cannot write more than 2 paragraph
+          description: z.array(z.string()).max(2),
+          imageUrl: z.string().optional(),
+          portfolioUrl: z.string().optional(),
+        })
+      )
+      // Limitation: cannot write more than 6 portfolios
+      .max(6)
+      .optional(),
     skills: z.array(
       z.object({
         name: z.string(),
