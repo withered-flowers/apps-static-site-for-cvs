@@ -131,6 +131,7 @@ certifications:
       - Ultricies dictum ex ut commodo
       - Nunc eleifend dictum nibh, nec semper magna faucibus non. Praesent mattis metus eget nunc consequat, nec efficitur lorem tincidunt.
       - Suspendisse nec purus quis turpis lobortis ultricies a sed odio. Fusce quis odio libero. Suspendisse eget elit vitae velit pretium commodo.
+      - Mauris varius nibh eros, consectetur feugiat dui semper in.
   - title: Aliquam consequat vitae
     issuer: Nisl egestas
     startDate: Nov 2022
@@ -139,6 +140,47 @@ certifications:
     issuer: sagittis odio
     startDate: Dec 2022
     expirationDate: Dec 2023
+
+# Array of Object - Optional
+# (Cannot have quantity more than 6)
+# - name: string
+# - tag: Enum (Optional)
+#   List of allowed tags:
+#   - content, web, mobile
+# - description: Array of String
+#                (cannot write more than 2 paragraphs)
+# - imageUrl: string (Optional)
+# - portfolioUrl: string (Optional)
+portfolios:
+  - name: Lorem Ipsum
+    tag: content
+    description:
+      - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet scelerisque lorem. Aenean at posuere diam. Pellentesque tristique varius consequat. Vivamus id neque eu mauris tincidunt dictum. In pellentesque massa quis nisl porta accumsan. Sed vel libero eu enim blandit facilisis sit amet id ex.
+      - Praesent in congue nibh. Morbi dignissim, magna a condimentum lobortis, nisi est malesuada purus, quis pharetra mi arcu vel orci. Suspendisse sed pulvinar nibh. Pellentesque iaculis semper mauris ut fringilla. Mauris et quam vel lacus tincidunt pulvinar. Quisque quis pharetra lorem.
+    imageUrl: https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80
+    portfolioUrl: https://www.google.com
+  - name: Dolor sit Amet
+    tag: web
+    description:
+      - Vivamus semper dolor non lacinia hendrerit. Nunc bibendum dolor id mauris suscipit, et lacinia felis volutpat. Nullam nisl lectus, iaculis ac tincidunt non, fermentum eu tellus. Praesent dictum purus lacus, eget ultricies lacus commodo eu.
+      - Duis mauris risus, pretium ac tempor quis, feugiat in eros. Aenean et scelerisque lectus. Maecenas eu lacus consequat, tincidunt ipsum id, dignissim dolor.
+    imageUrl: https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80
+    portfolioUrl: https://www.yahoo.com
+  - name: Consectetur Adipiscing Elit
+    tag: mobile
+    description:
+      - Praesent nunc orci, sodales at velit at, vehicula tristique lectus. Aliquam ac pharetra augue. Donec pharetra orci sed nisi hendrerit, vel iaculis orci pretium. Nullam luctus, turpis a vulputate ultrices, justo risus egestas nunc, ut porta elit nisi et justo. In in pellentesque leo, non euismod ex. Donec scelerisque nisi a ante scelerisque dictum.
+    imageUrl: https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80
+  - name: Nulla sit amet
+    tag: content
+    description:
+      - Donec scelerisque nisi a ante scelerisque dictum. Phasellus ex ante, tristique id nunc vel, facilisis malesuada neque. Maecenas ultrices mauris lacus, sit amet vestibulum sem finibus ut.
+    portfolioUrl: https://www.outlook.com
+  - name: Aenean at posuere diam
+    description:
+      - Pellentesque nec nisl consectetur, varius nulla nec, fringilla metus.
+      - Duis ac nulla dignissim, eleifend justo quis, dictum nisl. Vivamus tincidunt, mauris nec scelerisque mattis, lorem purus lobortis quam, ut efficitur tellus turpis et libero.
+    imageUrl: https://images.unsplash.com/photo-1559333086-b0a56225a93c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80
 
 # Array of Object - Optional
 # - name: string
