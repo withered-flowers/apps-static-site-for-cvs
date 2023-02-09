@@ -5,6 +5,7 @@ import Contact from "../../components/standard/Contact.astro";
 import WorkExperience from "../../components/standard/WorkExperience.astro";
 import Education from "../../components/standard/Education.astro";
 import Certification from "../../components/standard/Certification.astro";
+import PortfolioList from "../../components/standard/PortfolioList.astro";
 import Skill from "../../components/standard/Skill.astro";
 
 interface Props {
@@ -152,6 +153,21 @@ const { frontmatter } = Astro.props as Props;
       )
     }
 
+    <!-- Portfolios -->
+    {
+      frontmatter.portfolios && (
+        <section class="print:hidden">
+          <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
+            Portfolio
+          </p>
+
+          <section>
+            <PortfolioList portfolios={frontmatter.portfolios} />
+          </section>
+        </section>
+      )
+    }
+
     <!-- Skills -->
     <section id="skills" class="text-left">
       <p
@@ -164,5 +180,4 @@ const { frontmatter } = Astro.props as Props;
       </div>
     </section>
   </section>
-  <slot />
 </BaseLayout>

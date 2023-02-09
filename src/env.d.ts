@@ -14,6 +14,8 @@ type ContactProtocol =
   | "whatsapp"
   | "youtube";
 
+type Tag = "content" | "web" | "mobile";
+
 interface Contact {
   protocol: ContactProtocol;
   value: string;
@@ -49,6 +51,14 @@ interface Skill {
   description: string[];
 }
 
+interface Portfolio {
+  name: string;
+  tag?: Tag | undefined;
+  description: string[];
+  imageUrl?: string | undefined;
+  portfolioUrl?: string | undefined;
+}
+
 interface CV {
   template: string;
   // WARNING: generation is enum of string in zod (config.ts)
@@ -62,5 +72,6 @@ interface CV {
   workExperiences?: WorkExperience[] | undefined;
   educations?: Education[];
   certifications?: Certification[] | undefined;
+  portfolios?: Portfolio[] | undefined;
   skills?: Skill[];
 }
