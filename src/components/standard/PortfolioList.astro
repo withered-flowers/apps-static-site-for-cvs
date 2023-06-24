@@ -4,9 +4,17 @@ import Portfolio from "./Portfolio.astro";
 const { portfolios } = Astro.props as { portfolios: Portfolio[] };
 ---
 
-<!-- Small & Medium sized display = Carousel -->
-<section class="relative overflow-auto lg:hidden">
-  <div class="snap relative flex w-full snap-x gap-6 overflow-x-auto py-4">
+<!-- Small = List -->
+<section class="relative overflow-auto md:hidden">
+  <!-- Contents (Portfolio) -->
+  {portfolios.map((portfolio) => <Portfolio portfolio={portfolio} />)}
+</section>
+
+<!-- Medium = Carousel -->
+<section class="relative hidden overflow-auto md:block lg:hidden">
+  <div
+    class="snap relative flex w-full snap-x snap-mandatory gap-6 overflow-x-auto py-4"
+  >
     <!-- Starting Point -->
     <div class="shrink-0 snap-center">
       <div class="w-4 shrink-0 sm:w-32 md:w-24"></div>
