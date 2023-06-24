@@ -25,9 +25,9 @@ const { frontmatter } = Astro.props as Props;
       id="navigations"
       class="flex flex-row items-center justify-between gap-2 py-2 print:hidden"
     >
-      <h1>About Graduates ({frontmatter.name})</h1>
+      <h1 class="text-2xl font-semibold uppercase">My Profile</h1>
       <button
-        class="flex flex-row gap-2 rounded border border-red-300 py-2 px-4 text-red-400 transition-colors duration-300 hover:bg-red-400 hover:text-white"
+        class="flex flex-row gap-2 rounded border border-red-300 px-4 py-2 text-red-400 transition-colors duration-300 hover:bg-red-400 hover:text-white"
         onclick="window.print();">Print Me</button
       >
     </section>
@@ -45,7 +45,7 @@ const { frontmatter } = Astro.props as Props;
       <p class="text-xl font-bold print:mt-2">
         {frontmatter.name}
       </p>
-      <p class="text-base">{frontmatter.pronouns}</p>
+      {frontmatter.pronouns && <p class="text-base">{frontmatter.pronouns}</p>}
       <p class="flex flex-row items-center gap-1">
         <span>
           <svg
@@ -74,7 +74,7 @@ const { frontmatter } = Astro.props as Props;
     <!-- Contact -->
     <section id="contacts" class="text-left">
       <p
-        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
+        class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl"
       >
         Contact
       </p>
@@ -95,7 +95,7 @@ const { frontmatter } = Astro.props as Props;
     {
       frontmatter.aboutMe && (
         <section id="about-me" class="text-left text-base">
-          <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
+          <p class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl">
             About Me
           </p>
           <p>{frontmatter.aboutMe}</p>
@@ -107,7 +107,7 @@ const { frontmatter } = Astro.props as Props;
     {
       frontmatter.workExperiences && (
         <section id="work-experiences" class="text-left">
-          <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
+          <p class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl">
             Work Experience
           </p>
 
@@ -123,7 +123,7 @@ const { frontmatter } = Astro.props as Props;
     <!-- Educations -->
     <section id="educations" class="text-left">
       <p
-        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
+        class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl"
       >
         Education
       </p>
@@ -141,7 +141,7 @@ const { frontmatter } = Astro.props as Props;
     {
       frontmatter.certifications && (
         <section id="certifications" class="text-left">
-          <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
+          <p class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl">
             Certification
           </p>
           <div class="flex flex-col gap-4">
@@ -153,11 +153,23 @@ const { frontmatter } = Astro.props as Props;
       )
     }
 
+    <!-- Skills -->
+    <section id="skills" class="text-left">
+      <p
+        class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl"
+      >
+        Skills
+      </p>
+      <div class="grid grid-cols-1 print:grid print:grid-cols-2 sm:grid-cols-2">
+        {frontmatter.skills?.map((skill) => <Skill skill={skill} />)}
+      </div>
+    </section>
+
     <!-- Portfolios -->
     {
       frontmatter.portfolios && (
         <section class="print:hidden">
-          <p class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base">
+          <p class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl">
             Portfolio
           </p>
 
@@ -167,17 +179,5 @@ const { frontmatter } = Astro.props as Props;
         </section>
       )
     }
-
-    <!-- Skills -->
-    <section id="skills" class="text-left">
-      <p
-        class="mb-4 border-b-2 pb-2 text-xl font-bold uppercase print:text-base"
-      >
-        Skills
-      </p>
-      <div class="grid grid-cols-1 print:grid print:grid-cols-2 sm:grid-cols-2">
-        {frontmatter.skills?.map((skill) => <Skill skill={skill} />)}
-      </div>
-    </section>
   </section>
 </BaseLayout>
