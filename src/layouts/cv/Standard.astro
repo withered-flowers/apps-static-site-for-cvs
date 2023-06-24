@@ -153,6 +153,18 @@ const { frontmatter } = Astro.props as Props;
       )
     }
 
+    <!-- Skills -->
+    <section id="skills" class="text-left">
+      <p
+        class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl"
+      >
+        Skills
+      </p>
+      <div class="grid grid-cols-1 print:grid print:grid-cols-2 sm:grid-cols-2">
+        {frontmatter.skills?.map((skill) => <Skill skill={skill} />)}
+      </div>
+    </section>
+
     <!-- Portfolios -->
     {
       frontmatter.portfolios && (
@@ -167,17 +179,5 @@ const { frontmatter } = Astro.props as Props;
         </section>
       )
     }
-
-    <!-- Skills -->
-    <section id="skills" class="text-left">
-      <p
-        class="mb-4 border-b-2 pb-2 text-2xl font-bold uppercase print:text-xl"
-      >
-        Skills
-      </p>
-      <div class="grid grid-cols-1 print:grid print:grid-cols-2 sm:grid-cols-2">
-        {frontmatter.skills?.map((skill) => <Skill skill={skill} />)}
-      </div>
-    </section>
   </section>
 </BaseLayout>
