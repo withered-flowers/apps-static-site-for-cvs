@@ -3,13 +3,15 @@ const { workExperience } = Astro.props as { workExperience: WorkExperience };
 ---
 
 <section>
-  <div class="flex flex-row items-start justify-between">
+  <div
+    class="flex flex-col items-start justify-between print:flex-row md:flex-row"
+  >
     <div>
       <p class="text-lg font-semibold">{workExperience.title}</p>
       <p class="text-base font-semibold">{workExperience.company}</p>
     </div>
     <p>
-      <span class="text-lg font-semibold"
+      <span class="text-sm font-semibold print:text-lg md:text-lg"
         >{workExperience.startDate} - {workExperience.endDate}</span
       >
     </p>
