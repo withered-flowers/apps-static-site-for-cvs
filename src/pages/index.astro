@@ -17,6 +17,11 @@ const uniqueGenerations = await getCollection("cv").then(
   }
 );
 
+// const tmpGenerations = uniqueGenerations.filter((gen) => gen.includes("TMP"));
+const bsdGenerations = uniqueGenerations.filter((gen) => gen.includes("BSD"));
+const hckGenerations = uniqueGenerations.filter((gen) => gen.includes("HCK"));
+const rmtGenerations = uniqueGenerations.filter((gen) => gen.includes("RMT"));
+
 export const prerender = true;
 ---
 
@@ -32,15 +37,56 @@ export const prerender = true;
     </section>
     <section>
       <p class="text-xl">Please choose Class:</p>
-      <ul class="ml-2 flex list-disc flex-col gap-2 p-2">
+
+      <!-- Generation: TMP -->
+      <!-- <ul class="ml-2 flex list-disc flex-col gap-2 p-2">
         {
-          uniqueGenerations.map((generation) => (
+          tmpGenerations.map((generation) => (
             <li>
               <Link href={`/cv/gen/${generation}`}>{generation}</Link>
             </li>
           ))
         }
-      </ul>
+      </ul> -->
+
+      <!-- Generation: BSD -->
+      <section>
+        <ul class="ml-2 flex list-disc flex-col gap-2 p-2">
+          {
+            bsdGenerations.map((generation) => (
+              <li>
+                <Link href={`/cv/gen/${generation}`}>{generation}</Link>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <!-- Generation: HCK -->
+      <section>
+        <ul class="ml-2 flex list-disc flex-col gap-2 p-2">
+          {
+            hckGenerations.map((generation) => (
+              <li>
+                <Link href={`/cv/gen/${generation}`}>{generation}</Link>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <!-- Generation: RMT -->
+      <section>
+        <ul class="ml-2 flex list-disc flex-col gap-2 p-2">
+          {
+            rmtGenerations.map((generation) => (
+              <li>
+                <Link href={`/cv/gen/${generation}`}>{generation}</Link>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
     </section>
   </main>
   <Footer />

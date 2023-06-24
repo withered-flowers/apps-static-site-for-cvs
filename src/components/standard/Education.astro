@@ -5,11 +5,11 @@ const { education } = Astro.props as { education: Education };
 <section>
   <div class="flex flex-row items-start justify-between">
     <div>
-      <p class="font-semibold">{education.title}</p>
+      <p class="text-lg font-semibold">{education.title}</p>
       <p class="text-base font-semibold">{education.school}</p>
     </div>
     <p>
-      <span class="font-semibold"
+      <span class="text-lg font-semibold"
         >{education.startYear} - {education.endYear}</span
       >
     </p>
