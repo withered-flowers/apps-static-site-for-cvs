@@ -3,13 +3,15 @@ const { education } = Astro.props as { education: Education };
 ---
 
 <section>
-  <div class="flex flex-row items-start justify-between">
+  <div
+    class="flex flex-col items-start justify-between print:flex-row md:flex-row"
+  >
     <div>
       <p class="text-lg font-semibold">{education.title}</p>
       <p class="text-base font-semibold">{education.school}</p>
     </div>
     <p>
-      <span class="text-lg font-semibold"
+      <span class="text-sm font-semibold print:text-lg md:text-lg"
         >{education.startYear} - {education.endYear}</span
       >
     </p>

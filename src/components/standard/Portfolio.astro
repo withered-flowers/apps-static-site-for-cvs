@@ -2,19 +2,17 @@
 const { portfolio } = Astro.props as { portfolio: Portfolio };
 ---
 
-<section
-  class="mx-auto shrink-0 snap-center rounded-lg first:pl-8 last:pr-8 lg:first:pl-0 lg:first:pr-0"
->
+<section class="mx-auto shrink-0 snap-center snap-always rounded-lg">
   <section
-    class="rounded-lg p-4 transition-transform duration-500 hover:scale-105 hover:bg-gray-200"
+    class="rounded-lg p-3 duration-500 hover:bg-gray-200 md:p-4 md:transition-transform md:hover:scale-105"
   >
     <a
       href={portfolio.portfolioUrl ? portfolio.portfolioUrl : "#"}
       target="_blank"
     >
-      <section class="w-80">
+      <section class="w-full md:w-80">
         <img
-          class="h-40 w-80 shrink-0 rounded-lg bg-white shadow-xl"
+          class="mx-auto h-40 w-80 shrink-0 rounded-lg bg-white shadow-xl"
           src={portfolio.imageUrl
             ? portfolio.imageUrl
             : "https://via.placeholder.com/320x160"}
