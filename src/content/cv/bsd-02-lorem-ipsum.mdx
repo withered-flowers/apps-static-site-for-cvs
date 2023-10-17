@@ -1,0 +1,212 @@
+---
+# This is the template to be modified
+
+# for every "Required" value, need to be defined
+# for every "Optional" value, can be deleted / comment
+
+# This file is YAML-like (key: value)
+# Indentation is important !
+
+# string - Required
+template: standard
+
+# string - Optional
+pronouns: (He / Him)
+
+# string - Required
+# example:
+#   BSD-01 (Auburn Fox)
+#   HCK-53 (Arsenic Fox)
+#   RMT-31 (Eustoma Fox)
+generation: BSD-02 (Beige Fox)
+
+# string - Required
+avatarUrl: https://avatars.githubusercontent.com/u/1587199?v=4
+
+# string - Required
+name: Lorem Ipsum
+
+# string - Required
+location: Indonesia
+
+# string - Optional
+aboutMe: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+# Array of Object - Required
+# - protocol: Enum
+#   List of allowed protocol:
+#   - discord, email, instagram, line, linkedin,
+#     phone, telegram, tiktok, twitter, youtube, whatsapp
+# - value: string with double quote e.g. "some value"
+contacts:
+  - protocol: discord
+    value: "Discordo#12345"
+  - protocol: email
+    value: "loremipsum@mail.com"
+  - protocol: instagram
+    value: "@LipSum"
+  - protocol: line
+    value: "@linedesu"
+  - protocol: linkedin
+    value: "@DolorSitAmet"
+  - protocol: phone
+    value: "+26-8200-1122-3344"
+  - protocol: telegram
+    value: "@LoremIpsum"
+  - protocol: tiktok
+    value: "@SitAmet"
+  - protocol: twitter
+    value: "@LoremDolor"
+  - protocol: whatsapp
+    value: "+62-0082-1133-4422"
+  - protocol: youtube
+    value: "@IpsumSit"
+
+# Array of Object - Optional
+# - title: string
+# - company: string
+# - startDate: Month and Year in string e.g. Jan 2022
+# - endDate: Month and Year in string e.g. Des 2022 or Present
+# - description: Array of string
+workExperiences:
+  - title: Consectetur adipiscing elit
+    company: Sed do Eiusmod
+    startDate: Jan 2018
+    endDate: Des 2019
+    description:
+      - Tempor incididunt ut labore et dolore magna aliqua
+      - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+      - Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+  - title: Excepteur sint occaecat
+    company: Cupidatat non proident
+    startDate: Jan 2020
+    endDate: Aug 2021
+    description:
+      - Sunt in culpa qui officia deserunt mollit anim id est laborum.
+      - Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+      - Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+  - title: Nemo enim ipsam
+    company: Voluptatem quia voluptas
+    startDate: Sep 2021
+    endDate: Present
+    description:
+      - Sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+      - Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+      - Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+
+# Array of Object - Required
+# - title: string
+# - school: string
+# - startYear: Year in string e.g. "2022" (should be double quote) or Jan 2022
+# - endYear: Year in string e.g. "2023" (should be double quote) or Feb 2022
+#            or Present
+# - description: Array of String (Optional)
+educations:
+  - title: Quis autem vel eum iure
+    school: Reprehenderit qui in ea
+    startYear: "2008"
+    endYear: "2012"
+  - title: Phasellus et accumsan nunc
+    school: Morbi ultricies ligula
+    startYear: Jan 2012
+    endYear: Aug 2016
+    description:
+      - Ut nulla semper, gravida ornare est pretium.
+      - Aliquam orci sapien, efficitur id lacinia id, feugiat dapibus augue. Curabitur lacinia augue ante, a tincidunt leo fringilla quis. Pellentesque a sagittis nunc.
+      - Aenean ac dui ut leo tristique vehicula ut ac libero. Aenean sagittis sed eros ut dignissim. Vestibulum ultricies dictum ex ut commodo.
+
+# Array of Object - Optional
+# - title: string
+# - issuer: string
+# - startDate: string
+# - endDate: string
+# - certificateUrl: string (Optional)
+# - description: Array of String (Optional)
+certifications:
+  - title: Aenean sagittis sed eros ut dignissim
+    issuer: Vestibulum
+    startDate: Mar 2022
+    expirationDate: Jan 2023
+    certificateUrl: https://www.google.com
+    description:
+      - Ultricies dictum ex ut commodo
+      - Nunc eleifend dictum nibh, nec semper magna faucibus non. Praesent mattis metus eget nunc consequat, nec efficitur lorem tincidunt.
+      - Suspendisse nec purus quis turpis lobortis ultricies a sed odio. Fusce quis odio libero. Suspendisse eget elit vitae velit pretium commodo.
+      - Mauris varius nibh eros, consectetur feugiat dui semper in.
+  - title: Aliquam consequat vitae
+    issuer: Nisl egestas
+    startDate: Nov 2022
+    expirationDate: Feb 2023
+  - title: Sed pellentesque
+    issuer: sagittis odio
+    startDate: Dec 2022
+    expirationDate: Dec 2023
+
+# Array of Object - Optional
+# (Cannot have quantity more than 6)
+# - name: string
+# - tag: Enum (Optional)
+#   List of allowed tags:
+#   - content, web, mobile
+# - description: Array of String
+#                (cannot write more than 2 paragraphs)
+# - imageUrl: string (Optional)
+# - portfolioUrl: string (Optional)
+portfolios:
+  - name: Lorem Ipsum
+    tag: content
+    description:
+      - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet scelerisque lorem. Aenean at posuere diam. Pellentesque tristique varius consequat. Vivamus id neque eu mauris tincidunt dictum. In pellentesque massa quis nisl porta accumsan. Sed vel libero eu enim blandit facilisis sit amet id ex.
+      - Praesent in congue nibh. Morbi dignissim, magna a condimentum lobortis, nisi est malesuada purus, quis pharetra mi arcu vel orci. Suspendisse sed pulvinar nibh. Pellentesque iaculis semper mauris ut fringilla. Mauris et quam vel lacus tincidunt pulvinar. Quisque quis pharetra lorem.
+    imageUrl: https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80
+    portfolioUrl: https://www.google.com
+  - name: Dolor sit Amet
+    tag: web
+    description:
+      - Vivamus semper dolor non lacinia hendrerit. Nunc bibendum dolor id mauris suscipit, et lacinia felis volutpat. Nullam nisl lectus, iaculis ac tincidunt non, fermentum eu tellus. Praesent dictum purus lacus, eget ultricies lacus commodo eu.
+      - Duis mauris risus, pretium ac tempor quis, feugiat in eros. Aenean et scelerisque lectus. Maecenas eu lacus consequat, tincidunt ipsum id, dignissim dolor.
+    imageUrl: https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80
+    portfolioUrl: https://www.yahoo.com
+  - name: Consectetur Adipiscing Elit
+    tag: mobile
+    description:
+      - Praesent nunc orci, sodales at velit at, vehicula tristique lectus. Aliquam ac pharetra augue. Donec pharetra orci sed nisi hendrerit, vel iaculis orci pretium. Nullam luctus, turpis a vulputate ultrices, justo risus egestas nunc, ut porta elit nisi et justo. In in pellentesque leo, non euismod ex. Donec scelerisque nisi a ante scelerisque dictum.
+    imageUrl: https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80
+  - name: Nulla sit amet
+    tag: content
+    description:
+      - Donec scelerisque nisi a ante scelerisque dictum. Phasellus ex ante, tristique id nunc vel, facilisis malesuada neque. Maecenas ultrices mauris lacus, sit amet vestibulum sem finibus ut.
+    portfolioUrl: https://www.outlook.com
+  - name: Aenean at posuere diam
+    description:
+      - Pellentesque nec nisl consectetur, varius nulla nec, fringilla metus.
+      - Duis ac nulla dignissim, eleifend justo quis, dictum nisl. Vivamus tincidunt, mauris nec scelerisque mattis, lorem purus lobortis quam, ut efficitur tellus turpis et libero.
+    imageUrl: https://images.unsplash.com/photo-1559333086-b0a56225a93c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80
+
+# Array of Object - Optional
+# - name: string
+# - description: Array of String
+skills:
+  - name: FrontEnd
+    description:
+      - Astro (Advanced)
+      - Vue (Advanced)
+      - Svelte (Intermediate)
+  - name: BackEnd
+    description:
+      - Express & Sequelize (Intermediate)
+      - PostgreSQL (Intermediate)
+      - Go (Gin) (Intermediate)
+  - name: Cloud Computing
+    description:
+      - Firebase (Intermediate)
+      - Amazon Web Services (Basic)
+      - Docker & Kubernetes (Basic)
+      - Google Cloud Platform (Intermediate)
+  - name: Techniques
+    description:
+      - Googling (Advanced)
+      - StackOverflow-ing (Advanced)
+      - Git (Advanced)
+      - Reading Docs (Advanced)
+---
