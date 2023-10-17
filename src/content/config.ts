@@ -5,6 +5,11 @@ const cvSchema = {
     template: z.string(),
     generation: z.enum([
       "BSD-01 (Auburn Fox)",
+      "BSD-02 (Beige Fox)",
+      "BSD-03 (Charcoal Fox)",
+      "BSD-04 (Denim Fox)",
+      "BSD-05 (Ecru Fox)",
+      "BSD-06 (Fuchsia Fox)",
       "HCK-52 (Zigzag Fox)",
       "HCK-53 (Arsenic Fox)",
       "HCK-54 (Barium Fox)",
