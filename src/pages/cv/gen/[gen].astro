@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
     props: {
       gen: entry.data.generation,
       listOfCV: getCv.filter(
-        (cv) => cv.data.generation === entry.data.generation
+        (cv) => cv.data.generation === entry.data.generation,
       ),
     },
   }));
@@ -33,7 +33,7 @@ const { gen, listOfCV } = Astro.props as Props;
 ---
 
 <BaseLayout
-  className="bg-gray-50 text-slate-600 lg:p-8 md:w-3/4 xl:w-3/5 mx-auto"
+  className="mx-auto bg-gray-50 text-slate-600 md:w-3/4 lg:p-8 xl:w-3/5"
 >
   <Header title={`CV of ${gen}`} />
   <main class="p-4">
